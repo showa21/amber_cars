@@ -15,6 +15,16 @@ class CreateVehicleModelsTable extends Migration
     {
         Schema::create('vehicle_models', function (Blueprint $table) {
             $table->id();
+            $table->string('vhcl_model_nm');
+            $table->string('year');
+            $table->string('color');
+            $table->string('cost');
+            $table->string('condition');
+            $table->string('mileage');
+            $table->string('capacity');
+            $table->string('driver_side');
+            $table->string('trans_type');
+            $table->string('vehicle_type_id');
             $table->timestamps();
         });
     }
