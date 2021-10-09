@@ -18,8 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('tele')->default("1-876-8547729");
             $table->string('password');
-            $table->rememberToken();
+            $table->boolean('is_admin')->default(0);
             $table->timestamps();
         });
     }

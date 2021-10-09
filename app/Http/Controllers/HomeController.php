@@ -6,23 +6,24 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
+    public function index(){
+        print_r(route('about'));
+        return view('courses.index');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('home');
+    public function about(){
+        return 'This is the about us page';
+
+       
+    }
+
+    public function show($name){
+        $data= [
+            'course1'=> 'Social',
+            'course2'=> 'Maths' 
+        ];
+        return view('courses.index',[
+            'courses'=>$data[$name]
+        ]);
     }
 }
